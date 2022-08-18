@@ -19,11 +19,11 @@ const TransactionForm = ({addTransaction}) => {
         if(formData.name === ""){
             swal("" , "please enter the value" , "error")
         }else{
-        addTransaction(formData);
+        addTransaction({...formData ,id:Date.now()});
         setFormData({
             name : "",
             amount : 0,
-            type : "expense"
+            type : "expense",
         })
     }
     }

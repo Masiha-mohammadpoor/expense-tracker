@@ -19,15 +19,21 @@ const TransactionMain = () => {
         setIncome(inc);
     }, [transactions])
 
+    
+
     const addTransaction = (value) => {
         setTransactions([...transactions , value])
     }
 
+    const removeHandler = (id) => {
+        const fileterd = transactions.filter(t => t.id !== id);
+        setTransactions(fileterd)
+    }
 
     return (
         <main className="main">
             <OverView income={income} expense={expense} addTransaction={addTransaction}/>
-            <TransactionList transactions={transactions}/>
+            <TransactionList transactions={transactions} remove={removeHandler}/>
         </main>
     );
 }

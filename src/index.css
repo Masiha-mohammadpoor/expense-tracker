@@ -198,3 +198,19 @@ body{
     color: #ff0000;
     font-size: 20px;
 }
+
+.searchInput{
+    border:none;
+    outline:none;
+    width:85%;
+    font-size:18px;
+    background-color:#2a2d31;
+    color:#fff;
+    padding:13px;
+    border-radius:300px;
+    -webkit-border-radius:300px;
+    -moz-border-radius:300px;
+    -ms-border-radius:300px;
+    -o-border-radius:300px;
+    margin-bottom:20px;
+}
