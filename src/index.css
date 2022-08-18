@@ -33,7 +33,7 @@ body{
 .main{
     width: 40%;
     height: fit-content;
-    margin: 100px auto 0 auto;
+    margin: 100px auto 100px auto;
     background-color: #161616;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -53,6 +53,7 @@ body{
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
+
 }
 
 .overview article{
@@ -82,6 +83,7 @@ body{
     border: 2px solid #ff0000;
     color: #ff0000;
 }
+
 .incomeAndExpense div{
     width: 40%;
     height: 120px;
@@ -132,11 +134,14 @@ body{
 
 .form div{
     width: 85%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .form div label{
     display: inline-block;
-    width: 30%;
+    width: 40%;
 }
 
 .form div label input {
@@ -174,7 +179,7 @@ body{
 
 .transaction{
     width: 100%;
-    height: 55px;
+    height: 60px;
     background-color: #2a2d31;
     padding: 5px;
     border-radius: 10px;
@@ -183,11 +188,21 @@ body{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     color: #fff;
     border-right: 3px solid #ff0000;
     margin-bottom: 13px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.transaction div{
+    height:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction:column;
 }
 
 
@@ -213,4 +228,67 @@ body{
     -ms-border-radius:300px;
     -o-border-radius:300px;
     margin-bottom:20px;
+}
+
+
+@media (max-width:1100px){
+    .main{
+        width:50%
+    }
+}
+
+@media (max-width:780px){
+    .main{
+        width:60%
+    }
+}
+
+@media (max-width:680px){
+    .main{
+        width:70%
+    }
+}
+
+@media (max-width:540px){
+    .main{
+        width:95%
+    }
+
+    .addButton{
+        padding:8px 14px;
+    }
+
+    .form input[type="text"] , .form input[type="number"]{
+        width:95%;
+    }
+
+    .form button{
+        width:95%;
+        font-size:16px;
+    }
+
+    .incomeAndExpense{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        flex-direction:column;
+    }
+
+    .incomeAndExpense div{
+        width: 80%;
+        margin-top:30px;
+    }
+
+    .transaction{
+        width:130%;
+        transform:scale(.8)    ;
+        -webkit-transform:scale(.8)    ;
+        -moz-transform:scale(.8)    ;
+        -ms-transform:scale(.8)    ;
+        -o-transform:scale(.8)    ;
+}
+
+.balance{
+    font-size:12px;
+}
 }

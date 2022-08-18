@@ -9,7 +9,7 @@ const OverView = ({income , expense , addTransaction}) => {
     return ( 
         <section className="overview">
             <article>
-                <div>Balance : {income - expense} $</div>
+                <div className="balance">Balance : {income - expense} $</div>
                 <button className={`addButton ${isShow && "cancelButton"}`} onClick={() => setIsShow(prev => !prev)}>
                     {isShow ? "Cancel" : "Add"}
                     </button>
