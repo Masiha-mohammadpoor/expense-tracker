@@ -1,13 +1,163 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: "comfortaa";
+    src: url("./utils/camforta/Comfortaa-Regular.otf") format("otf"),
+    url("./utils/camforta/Comfortaa-Regular.ttf") format("ttf"),
+    url("./utils/camforta/Comfortaa-Regular.woff") format("woff");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: comfortaa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    background-color: #212529;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+    ::-webkit-scrollbar-track {
+    background: #ccc; 
+  }
+    ::-webkit-scrollbar-thumb {
+      background: #343a40;
+      border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+      -ms-border-radius:10px;
+      -o-border-radius:10px;
+  }
+.main{
+    width: 40%;
+    height: fit-content;
+    margin: 100px auto 0 auto;
+    background-color: #161616;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.overview{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overview article{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:25px;
+    color: #ffffff;
+}
+
+.addButton{
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: #3a86ff;
+    color: #fff;
+    font-size: 17px;
+}
+.cancelButton{
+    background-color: transparent;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+.incomeAndExpense div{
+    width: 40%;
+    height: 120px;
+    padding: 16px;
+    background-color: #2a2d31;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.incomeAndExpense span{
+    font-size: 20px;
+}
+
+
+.form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form * {
+    margin: 10px  0;
+}
+
+.form input[type="text"] , .form input[type="number"]{
+    border:none;
+    outline: none;
+    width: 85%;
+    padding: 13px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    color: #fff;
+    background-color: #2a2d31;
+    font-size: 18px;
+}
+
+.form div{
+    width: 85%;
+}
+
+.form div label{
+    display: inline-block;
+    width: 30%;
+}
+
+.form div label input {
+    margin-left: 10px;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+}
+
+.form button{
+    border: none;
+    outline: none;
+    width: 50%;
+    padding: 10px;
+    background-color: #3a86ff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
