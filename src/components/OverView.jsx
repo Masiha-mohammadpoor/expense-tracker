@@ -2,9 +2,9 @@ import TransactionForm from "./TransactionForm";
 import { useState } from "react";
 
 
-const OverView = ({income , expense}) => {
+const OverView = ({income , expense , addTransaction}) => {
 
-    const [isShow , setIsShow] = useState(true);
+    const [isShow , setIsShow] = useState(false);
 
     return ( 
         <section className="overview">
@@ -15,7 +15,7 @@ const OverView = ({income , expense}) => {
                     </button>
             </article>
             <article>
-                {isShow && <TransactionForm/>}
+                {isShow && <TransactionForm addTransaction={addTransaction}/>}
             </article>
             <article className="incomeAndExpense">
                 <div>

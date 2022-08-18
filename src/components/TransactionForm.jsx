@@ -1,14 +1,48 @@
-const TransactionForm = () => {
+import {useState} from "react";
+import swal from "sweetalert";
+
+
+const TransactionForm = ({addTransaction}) => {
+
+    const [formData ,setFormData] = useState({
+        name : "",
+        amount : 0,
+        type : "expense"
+    })
+
+    const changeHandler = (e) => {
+        setFormData({...formData , [e.target.name] : e.target.value});
+    }
+
+    const submitHandler = e => {
+        e.preventDefault();
+        if(formData.name === ""){
+            swal("" , "please enter the value" , "error")
+        }else{
+        addTransaction(formData);
+        setFormData({
+            name : "",
+            amount : 0,
+            type : "expense"
+        })
+    }
+    }
+
+
     return (
-        <form className="form">
+        <form className="form" onSubmit={submitHandler}>
             <input
                 type="text"
                 name="name"
-                placeholder="name..." />
+                placeholder="name..."
+                value={formData.name}
+                onChange={changeHandler} />
             <input
                 type="number"
-                name="amount..."
-                placeholder="amount..." />
+                name="amount"
+                placeholder="amount..."
+                value={formData.amount} 
+                onChange={changeHandler}/>
             <div>
             <label htmlFor="income">income
                     <input
@@ -16,7 +50,9 @@ const TransactionForm = () => {
                         value="income"
                         id="income"
                         name="type"
-                        style={{accentColor:"#008000"}} />
+                        style={{accentColor:"#008000"}}
+                        checked={formData.type === "income"}
+                        onChange={changeHandler} />
                 </label>
                 <label htmlFor="expense">expense
                     <input
@@ -24,7 +60,9 @@ const TransactionForm = () => {
                         value="expense"
                         id="expense"
                         name="type"
-                        style={{accentColor:"#a4161a"}} />
+                        style={{accentColor:"#a4161a"}}
+                        checked={formData.type === "expense"} 
+                        onChange={changeHandler}/>
                 </label>
             </div>
             <button type="submit">add transaction</button>
